@@ -1,6 +1,6 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors';
-import { router } from './routes/routes';
+import { router } from '../routes/routes';
 class App {
     app: express.Application;
     constructor() {
