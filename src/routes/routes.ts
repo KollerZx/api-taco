@@ -2,8 +2,8 @@ import { Router } from 'express';
 import { FoodController } from '../controllers/foodController';
 const router = Router();
 
-router.get('/v1/', (req, res) => {
-    res.send('Hello ');
+router.get('/v1/docs', (req, res) => {
+    res.send("<h1>Em construção, em Breve a documentação será Disponibilizada</h1>");
 });
 
 router.get('/v1/foods', (req, res) => res.json(FoodController.getFoodList()))
