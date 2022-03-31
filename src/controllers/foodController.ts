@@ -23,7 +23,7 @@ export class FoodController {
     static getCategoryById(req: Request, res: Response){
         const { categoryId } = req.params
 
-        const response = categoryList.filter( category => category.id.toString() === categoryId.toString())
+        const response = foodList.filter( food => food.category_id.toString() === categoryId.toString())
 
         return res.json(response)
     }
