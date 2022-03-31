@@ -11,8 +11,8 @@
     "paths": {
         "/v1/foods": {
             "get": {
-                "summary": "Consulta de alimentos",
-                "description": "Listar todos os alimentos da tabela",
+                "summary": "Consulta de Alimentos",
+                "description": "Listar todos os Alimentos da Tabela",
                 "tags": [
                     "Foods"
                 ],
@@ -32,8 +32,8 @@
         },
         "/v1/foods/{foodId}": {
             "get": {
-                "summary": "Consulta de alimentos",
-                "description": "Lista o alimento do referido Id",
+                "summary": "Consulta de Alimentos",
+                "description": "Retorna o Alimento do referido Id",
                 "parameters": [
                     {
                         "in": "path",
@@ -66,7 +66,7 @@
         "/v1/category": {
             "get": {
                 "summary": "Consulta de Categoria dos Alimentos",
-                "description": "Lista todas as categorias de Alimentos da Tabela",
+                "description": "Lista todas as Categorias de Alimentos da Tabela",
                 "tags": [
                     "Categorys"
                 ],
@@ -86,13 +86,13 @@
         },
         "/v1/category/{categoryId}": {
             "get": {
-                "summary": "Consulta de Categoria dos Alimentos",
-                "description": "Retorna os alimentos da categoria selecionada",
+                "summary": "Consulta de Alimentos por Categoria",
+                "description": "Retorna os Alimentos da Categoria selecionada",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "categoryId",
-                        "description": "Id da categoria de Alimento",
+                        "description": "Id da Categoria de Alimento",
                         "schema": {
                             "type": "number",
                             "example": 1
