@@ -40,7 +40,8 @@
                         "name": "foodId",
                         "description": "Id do Alimento",
                         "schema": {
-                            "type": "number"
+                            "type": "number",
+                            "example": 1
                         },
                         "required": true
                     }
@@ -54,7 +55,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Food"
+                                    "$ref": "#/components/schemas/FoodExample"
                                 }
                             }
                         }
@@ -86,14 +87,15 @@
         "/v1/category/{categoryId}": {
             "get": {
                 "summary": "Consulta de Categoria dos Alimentos",
-                "description": "Lista a categoria do Id referido",
+                "description": "Retorna os alimentos da categoria selecionada",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "categoryId",
                         "description": "Id da categoria de Alimento",
                         "schema": {
-                            "type": "number"
+                            "type": "number",
+                            "example": 1
                         },
                         "required": true
                     }
@@ -107,7 +109,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/category"
+                                    "$ref": "#/components/schemas/categoryExample"
                                 }
                             }
                         }
@@ -128,6 +130,509 @@
                 "type": "object",
                 "properties": {
                     "id": {
+                        "type": "number"
+
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "base_qty": {
+                        "type": "number",
+                        "default":100
+                    },
+                    "base_unit": {
+                        "type": "string",
+                        "default": "g"
+                    },
+                    "category_id": {
+                        "type": "number"
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "properties": {
+                            "humidity": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "number",
+                                        "format": "double",
+                                        "default": "percents"
+                                    }
+                                }
+                            },
+                            "protein": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "g"
+                                    }
+                                }
+                            },
+                            "lipid": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "g"
+                                    }
+                                }
+                            },
+                            "cholesterol": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "carbohydrate": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "g"
+                                    }
+                                }
+                            },
+                            "fiber": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "g"
+                                    }
+                                }
+                            },
+                            "ashes": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "g"
+                                    }
+                                }
+                            },
+                            "calcium": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "magnesium": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "phosphorus": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "iron": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "sodium": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "potassium": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "copper": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "zinc": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "retinol": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mcg"
+                                    }
+                                }
+                            },
+                            "thiamine": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "riboflavin": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "pyridoxine": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "niacin": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            },
+                            "energy": {
+                                "type": "object",
+                                "properties": {
+                                    "kcal": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "kj": {
+                                        "type": "number",
+                                        "format": "double"
+                                    }
+                                }
+                            },
+                            "fatty_acids": {
+                                "type": "object",
+                                "properties": {
+                                    "saturated": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "monounsaturated": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "polyunsaturated": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "14:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "16:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "18:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "20:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "22:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "24:0": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "18:1": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "20:1": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "18:2 n-6": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "18:3 n-3": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    },
+                                    "22:5": {
+                                        "type": "object",
+                                        "properties": {
+                                            "qty": {
+                                                "type": "number",
+                                                "format": "double"
+                                            },
+                                            "unit": {
+                                                "type": "string",
+                                                "default": "g"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "manganese": {
+                                "type": "object",
+                                "properties": {
+                                    "qty": {
+                                        "type": "number",
+                                        "format": "double"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "default": "mg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "FoodExample": {
+                "type": "object",
+                "properties": {
+                    "id": {
                         "type": "number",
                         "example": 1
                     },
@@ -144,7 +649,8 @@
                         "default": "g"
                     },
                     "category_id": {
-                        "type": "number"
+                        "type": "number",
+                        "example": 1
                     },
                     "attributes": {
                         "type": "object",
@@ -668,13 +1174,17 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "type": "number",
-                        "example": 1
+                        "type": "number"
                     },
                     "category": {
-                        "type": "string",
-                        "example": "Cereais e derivados"
+                        "type": "string"
                     }
+                }
+            },
+            "categoryExample":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/components/schemas/FoodExample"
                 }
             },
             "categoryList": {
@@ -683,7 +1193,6 @@
                     "$ref": "#/components/schemas/category"
                 }
             }
-
         }
     }
 }
