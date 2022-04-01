@@ -27,4 +27,12 @@ export class FoodController {
 
         return res.json(response)
     }
+    static index(req: Request, res: Response){
+        res.render('index', { foodList } )
+    }
+    static render(req: Request, res: Response){
+        const { id_food } = req.body
+        const [food] = foodList.filter( food => food.id.toString() === id_food.toString())
+        res.render('table', { food })
+    }
 }
