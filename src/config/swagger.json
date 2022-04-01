@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "API de consulta da TACO 4ª Ed. (Tabela Brasileiro de Composição de Alimentos)",
+        "title": "API de consulta da TACO 4ª Ed. (Tabela Brasileira de Composição de Alimentos)",
         "description": "Essa API tem por objetivo fornecer de forma prática a consulta a composição nutricional dos Alimentos informados na TACO",
         "contact": {
             "email": "henrique.koller@gmail.com"
