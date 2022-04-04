@@ -12,13 +12,13 @@
         <h1>Tabela TACO</h1>
         <form action="/v1/interface/foods" method="post" class="form-control">
             <select name="id_food" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Open this select menu</option>
+                <option selected >Open this select menu</option>
                 <% foodList.forEach(food => { %>
                     <option value="<%= food.id %>" ><%= food.description %></option>
                 <% }) %>
             </select>
 
-            <button type="submit">Consultar</button>
+            <button type="submit" class="btn btn-success">Consultar</button>
         </form>
 
 

@@ -15,12 +15,20 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Alimento</th>
+                    <th scope="col">Kcal</th>
+                    <th scope="col">Proteína (g)</th>
+                    <th scope="col">Carboidratos (g)</th>
+                    <th scope="col">Lipídeos (g)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td> <%= food.id %> </td>
                     <td><%= food.description%></td>
+                    <td><%= food.attributes.energy.kcal.toFixed(2) %> </td>
+                    <td><%= food.attributes.protein.qty.toFixed(2) %> </td>
+                    <td><%= food.attributes.carbohydrate.qty.toFixed(2) %> </td>
+                    <td><%= food.attributes.lipid.qty.toFixed(2) %> </td>
                 </tr>
             </tbody>
 
