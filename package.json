@@ -1,7 +1,7 @@
 {
     "name": "api-taco",
     "version": "1.0.0",
-    "main": "server.ts",
+    "main": "server.js",
     "license": "MIT",
     "scripts": {
         "build": "tsc && tsnd src/utils/copyAssets.ts",
